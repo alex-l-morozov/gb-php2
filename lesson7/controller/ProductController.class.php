@@ -12,11 +12,17 @@ class ProductController extends Controller
     }
 
     //метод, который отправляет в представление информацию в виде переменной content_data
-    function index(){
-        $arProducts = Product::getProductsAll();
+    function index($data)
+    {
+        $arProducts = Product::getAll();
         return ['Products' =>$arProducts, ];
     }
-    function detail(){
-        return [];
+    function detail()
+    {
+        if ($_GET['id']) {
+            $arProducts = Product::getDetail($_GET['id']);
+            return ['Product' =>$arProducts[0], ];
+        }
+        header("Location: ./?path=product/index");
     }
 }

@@ -13,7 +13,7 @@ class IndexController extends Controller
 	
 	//метод, который отправляет в представление информацию в виде переменной content_data
 	function index($data){
-        $arProducts = Product::getProductsIndex();
+        $arProducts = Product::getIndex();
 		 return ['Products' =>$arProducts, ];
 	}
 
