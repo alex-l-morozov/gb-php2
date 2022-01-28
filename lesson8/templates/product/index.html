@@ -1,0 +1,156 @@
+{% include 'header.html' %}
+<section class="block__page-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="block__page-nav__title">Catalog</h1>
+            </div>
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Catalog</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="block__page-catalog container">
+    <div class="row">
+        <div class="col-3">
+            <nav>
+                <div class="accordion" id="accordionCatalog">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                Category
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionCatalog">
+                            <div class="accordion-body">
+                                <ul class="menu__left-brand">
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Accessories</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Bags</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Denim</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Hoodies & Sweats</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Accessories</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Bags</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Denim</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Hoodies & Sweats</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Accessories</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Bags</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Denim</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Hoodies & Sweats</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Denim</a></li>
+                                    <li class="menu__left-brand__item"><a class="menu__left-brand__link" href="./catalog.html">Hoodies & Sweats</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                BRAND
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionCatalog">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum facilis, illum inventore magnam modi mollitia nulla odit saepe! At dicta error eum illo iure iusto nihil nulla, quasi recusandae unde.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                dESIGNER
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionCatalog">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum facilis, illum inventore magnam modi mollitia nulla odit saepe! At dicta error eum illo iure iusto nihil nulla, quasi recusandae unde.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="col-9">
+            <div class="row">
+                <div class="col-4">
+                    <h4 class="catalog__filter-heading">Trending now</h4>
+                    <p class="catalog__filter-link__block"><a class="catalog__filter-link" href="#">Bohemian</a> | <a class="catalog__filter-link" href="#">Floral</a> | <a class="catalog__filter-link" href="#">Lace Floral</a> | <a class="catalog__filter-link" href="#">Lace</a> | <a class="catalog__filter-link" href="#">Bohemian</a></p>
+                </div>
+                <div class="col-4">
+                    <h4 class="catalog__filter-heading">Size</h4>
+                    <div class="row">
+                        <div class="col-3"><input class="form-check-input" type="checkbox" value="" id="size-xxs"> <label class="form-check-label catalog__filter-label" for="size-xxs">XXS</label></div>
+                        <div class="col-3"><input class="form-check-input" type="checkbox" value="" id="size-xs"> <label class="form-check-label catalog__filter-label" for="size-xs">XS</label></div>
+                        <div class="col-3"><input class="form-check-input" type="checkbox" value="" id="size-s"> <label class="form-check-label catalog__filter-label" for="size-s">S</label></div>
+                        <div class="col-3"><input class="form-check-input" type="checkbox" value="" id="size-m"> <label class="form-check-label catalog__filter-label" for="size-m">M</label></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"><input class="form-check-input" type="checkbox" value="" id="size-l"> <label class="form-check-label catalog__filter-label" for="size-l">L</label></div>
+                        <div class="col-3"><input class="form-check-input" type="checkbox" value="" id="size-xl"> <label class="form-check-label catalog__filter-label" for="size-xl">XL</label></div>
+                        <div class="col-3"><input class="form-check-input" type="checkbox" value="" id="size-xxl"> <label class="form-check-label catalog__filter-label" for="size-xxl">XXL</label></div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h4 class="catalog__filter-heading">pRICE</h4>
+                    <input type="range" class="form-range" min="0" max="400" step="1" value="52">
+                    <div class="row">
+                        <div class="col-6 catalog__filter-range-left">$52</div>
+                        <div class="col-6 catalog__filter-range-right">$400</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 catalog__dropdown-block"><span class="catalog__dropdown-sort">Sort</span><select class="form-select catalog__dropdown-sort__select">
+                    <option value="1" selected>Name</option>
+                    <option value="2">Price</option>
+                </select><span class="catalog__dropdown-by">By Show</span><select class="form-select catalog__dropdown-by__select">
+                    <option value="9" selected>9</option>
+                    <option value="18">18</option>
+                    <option value="36">36</option>
+                </select></div>
+            </div>
+            <div class="main__box-shop__block-products_list">
+                {% for product in content_data.Products %}
+                <div class="block-product__item">
+                    <a href="./?path=product/detail/{{product.id}}" class="block-product__item-link">
+                        <img src="./assets/images/{{product.img_small}}" class="block-product__item-img" alt="{{product.name}}">
+                        <h5 class="block-product__item-heading">{{product.name}}</h5>
+                        <p class="block-product__item-price">${{product.price}}</p>
+                    </a>
+                    <div class="block-product__item-card-add">
+                        <a class="item-card-add__link cart-add" href="#" data-product-id="{{product.id}}"><img class="item-card-add__img" src="./assets/images/cart-add.svg" alt="cart-img">Add to cart</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <nav>
+                        <ul class="pagination pagination-sm">
+                            <li class="page-item disabled"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link">1</span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                            <li class="page-item"><a class="page-link" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link" href="#">20</a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 catalog__view-all__block"><a class="catalog__view-all" href="./catalog.html">View All</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'footer.html' %}
