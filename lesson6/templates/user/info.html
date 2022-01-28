@@ -1,0 +1,52 @@
+{% include 'header.html' %}
+<section class="block__page-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="block__page-nav__title">Profile</h1>
+            </div>
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./">Home</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="block__order container">
+    <h3>My orders</h3>
+    {% for order in content_data.Orders %}
+    <h3>Order #{{order.id}}__{{order.date}}</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col" class="cart__col_head cart__col_head_one">Product Details</th>
+            <th scope="col" class="cart__col_head cart__col_head_center">unite Price</th>
+            <th scope="col" class="cart__col_head cart__col_head_center">Quantity</th>
+            <th scope="col" class="cart__col_head cart__col_head_center">shipping</th>
+            <th scope="col" class="cart__col_head cart__col_head_center">Subtotal</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+            {% for product in order.detail %}
+        <tr>
+            <td class="cart__img-padding"><div class="row">
+                <div class="col-3"><a href="./?path=product/detail/{{product.id}}"><img src="./assets/images/{{product.img_small}}" alt="{{product.name}}" style="width: 100px;"></a></div>
+                <div class="col-9">
+                    <p class="cart__text-heading"><a class="cart__text-heading__link" href="./?path=product/detail/{{product.id}}">{{product.name}}</a></p>
+                </div>
+            </div></td>
+            <td class="cart__text-padding">${{product.price}}</td>
+            <td class="cart__form-padding">{{product.count}}</td>
+            <td class="cart__text-padding">FREE</td>
+            <td class="cart__text-padding">${{ product.price * product.count }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endfor %}
+</section>
+{% include 'footer.html' %}

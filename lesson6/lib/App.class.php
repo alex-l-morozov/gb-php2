@@ -8,7 +8,7 @@ class App
         db::getInstance()->Connect(Config::get('db_user'), Config::get('db_password'), Config::get('db_base'));
 
         if (php_sapi_name() !== 'cli' && isset($_SERVER) && isset($_GET)) {
-            self::web($_GET['path'] ? $_GET['path'] : '');
+            self::web($_GET['path'] ?? '');
         }
     }
 	
@@ -21,14 +21,14 @@ class App
     {
         $url = explode("/", $url);
         if (!empty($url[0])) {
-        $_GET['page'] = $url[0];//×àñòü èìåíè êëàññà êîíòðîëëåðà
+        $_GET['page'] = $url[0];//Ð§Ð°ÑÑ‚ÑŒ Ð¸Ð¼ÐµÐ½Ð¸ ÐºÐ»Ð°ÑÑÐ° ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ð»ÐµÑ€Ð°
         if (isset($url[1])) {
             if (is_numeric($url[1])) {
                 $_GET['id'] = $url[1];
             } else {
-                $_GET['action'] = $url[1];//÷àñòü èìåíè ìåòîäà
+                $_GET['action'] = $url[1];//Ñ‡Ð°ÑÑ‚ÑŒ Ð¸Ð¼ÐµÐ½Ð¸ Ð¼ÐµÑ‚Ð¾Ð´Ð°
             }
-            if (isset($url[2])) {//ôîðìàëüíûé ïàðàìåòð äëÿ ìåòîäà êîíòðîëëåðà
+            if (isset($url[2])) {//Ñ„Ð¾Ñ€Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ Ð´Ð»Ñ Ð¼ÐµÑ‚Ð¾Ð´Ð° ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ð»ÐµÑ€Ð°
                 $_GET['id'] = $url[2];
             }
         }
@@ -42,14 +42,17 @@ class App
             $methodName = isset($_GET['action']) ? $_GET['action'] : 'index';
             $controller = new $controllerName();
 
-            //Êëþ÷è äàííîãî ìàññèâà äîñòóïíû â ëþáîé âüþøêå
-            //Ìàññèâ data - ýòî ìàññèâ äëÿ èñïîëüçîâàíèÿ â ëþáîé âüþøêå
+            //ÐšÐ»ÑŽÑ‡Ð¸ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ñ‹ Ð² Ð»ÑŽÐ±Ð¾Ð¹ Ð²ÑŒÑŽÑˆÐºÐµ
+            //ÐœÐ°ÑÑÐ¸Ð² data - ÑÑ‚Ð¾ Ð¼Ð°ÑÑÐ¸Ð² Ð´Ð»Ñ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ñ Ð² Ð»ÑŽÐ±Ð¾Ð¹ Ð²ÑŒÑŽÑˆÐºÐµ
             $data = [
                 'content_data' => $controller->$methodName($_GET),
                 'title' => $controller->title,
-                'categories' => Category::getCategories(0)
+                'css' => in_array($_GET['page'], ['index', 'product']) ? $_GET['page'] : 'order',
+                'isAuth' => User::isAuth(),
             ];
-
+            if ($data['css']  == 'product' && $methodName == 'index') {
+                $data['css'] = 'catalog';
+            }
             $view = $controller->view . '/' . $methodName . '.html';
             if (!isset($_GET['asAjax'])) {
                 $loader = new Twig_Loader_Filesystem(Config::get('path_templates'));
